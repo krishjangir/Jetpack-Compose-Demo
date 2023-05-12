@@ -1,0 +1,109 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    /* -------- Dagger-Hilt plugin -------- */
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    namespace 'com.krishworld.jetpack_compose_demo'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.krishworld.jetpack_compose_demo"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.composeVersion
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1,gradle/incremental.annotation.processors}'
+        }
+    }
+}
+
+dependencies {
+    /* -------- Core dependencies -------- */
+    implementation CoreDependencies.coreKtx
+    implementation CoreDependencies.lifecycleRuntimeKtx
+    implementation CoreDependencies.activityCompose
+    implementation platform(CoreDependencies.composeBom)
+    implementation CoreDependencies.composeUi
+    implementation CoreDependencies.composeUiGraphics
+    implementation CoreDependencies.composeUiToolingPreview
+    implementation CoreDependencies.composeMaterial3
+    implementation CoreDependencies.composeMaterial3WindowSizeClass
+    /* -------- Core Test dependencies -------- */
+    testImplementation TestImplementation.junit
+    testImplementation TestImplementation.coroutinesTest
+    androidTestImplementation AndroidTestImplementation.junit
+    androidTestImplementation AndroidTestImplementation.espresso
+    androidTestImplementation platform(CoreDependencies.composeBom)
+    androidTestImplementation AndroidTestImplementation.uiTestJunit
+    /* -------- Core Debug dependencies -------- */
+    debugImplementation DebugImplementation.composeUiTooling
+    debugImplementation DebugImplementation.uiTestManifest
+
+    /* -------- Dagger-Hilt dependencies -------- */
+    implementation DaggerHilt.hilt
+    kapt DaggerHilt.hiltAndroidCompiler
+    implementation DaggerHilt.hiltCompiler
+    implementation DaggerHilt.hiltNavigationCompose
+
+    /* -------- Unit Test dependencies -------- */
+    testImplementation TestImplementation.mockk
+    testImplementation TestImplementation.mockitoCore
+    testImplementation TestImplementation.robolectric
+
+    /* -------- Exoplayer dependencies -------- */
+    implementation Exoplayer.exoplayer
+    implementation Exoplayer.exoplayerUi
+    implementation Exoplayer.exoplayerDash
+
+    /* -------- Retrofit dependencies -------- */
+    implementation Retrofit.retrofit
+    implementation Retrofit.retrofitConverterGson
+    implementation Retrofit.loggingInterceptor
+
+    /* -------- Paging dependencies -------- */
+    implementation Paging.paging
+
+    /* -------- Glide dependencies -------- */
+    implementation Glide.glide
+
+    /* -------- Navigation dependencies -------- */
+    implementation Navigation.navigation
+
+    /* -------- Pager dependencies -------- */
+    implementation Pager.pager
+
+    /* -------- Flowlayout dependencies -------- */
+    implementation Flowlayout.flowlayout
+}
