@@ -5,10 +5,10 @@ import androidx.media3.common.util.UnstableApi
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.krishworld.jetpack_compose_demo.ui.screen.Dashboard
-import com.krishworld.jetpack_compose_demo.ui.screen.ForgotPassword
-import com.krishworld.jetpack_compose_demo.ui.screen.LoginPage
-import com.krishworld.jetpack_compose_demo.ui.screen.SignUp
+import com.krishworld.jetpack_compose_demo.ui.screen.dashboard.Dashboard
+import com.krishworld.jetpack_compose_demo.ui.screen.forgotpassword.ForgotPassword
+import com.krishworld.jetpack_compose_demo.ui.screen.login.LoginPage
+import com.krishworld.jetpack_compose_demo.ui.screen.signup.SignUp
 
 @UnstableApi
 @Composable

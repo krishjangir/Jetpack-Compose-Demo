@@ -1,9 +1,10 @@
-package com.krishworld.jetpack_compose_demo.usecase
+package com.krishworld.jetpack_compose_demo.data.remote.repository
 
 import androidx.paging.PagingData
 import com.krishworld.jetpack_compose_demo.data.model.Photo
 import kotlinx.coroutines.flow.Flow
 
-interface MainUseCase {
+interface MoreRemoteRepository {
+    suspend fun getPhotos(page:Int): List<Photo>
     fun getPhotoPagination(): Flow<PagingData<Photo>>
 }

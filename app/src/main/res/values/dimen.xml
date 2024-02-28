@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!--
+        Spacings:
+        - A base 8dp linear progression of units meant to be used for padding & margins alone.
+        - Names are using the Tuple convention whose source of more can be found here:
+            https://en.wikipedia.org/wiki/Tuple#Names_for_tuples_of_specific_lengths
+        - If you feel you need more spacings than what's here, reconsider your constraint layout approach.
+        - These values are not be used directly! Instead use the horizontal, vertical, and surrounding spacings below.
+    -->
+    <dimen name="quarter_internal_spacing">2dp</dimen>
+    <dimen name="half_internal_spacing">4dp</dimen>
+    <dimen name="monuple_internal_spacing">8dp</dimen>
+    <dimen name="couple_internal_spacing">16dp</dimen>
+    <dimen name="triple_internal_spacing">24dp</dimen>
+    <dimen name="quadruple_internal_spacing">32dp</dimen>
+    <dimen name="quintuple_internal_spacing">40dp</dimen>
+    <dimen name="sextuple_internal_spacing">48dp</dimen>
+    <dimen name="septuple_internal_spacing">56dp</dimen>
+    <dimen name="octuple_internal_spacing">64dp</dimen>
+    <dimen name="nonuple_internal_spacing">72dp</dimen>
+    <dimen name="decuple_internal_spacing">80dp</dimen>
+    <dimen name="undecuple_internal_spacing">88dp</dimen>
+    <dimen name="duodecuple_internal_spacing">96dp</dimen>
+    <dimen name="tredecuple_internal_spacing">104dp</dimen>
+    <dimen name="quattuordecuple_internal_spacing">112dp</dimen>
+    <dimen name="quindecuple_internal_spacing">120dp</dimen>
+    <dimen name="sexdecuple_internal_spacing">128dp</dimen>
+
+    <!--
+        Horizontal Spacings:
+        Units of measurements to be used for marginStart, marginLeft, marginEnd, marginRight, paddingStart, paddingLeft, paddingEnd, paddingRight only.
+     -->
+    <dimen name="xxs_horizontal_spacing">@dimen/quarter_internal_spacing</dimen>
+    <dimen name="xs_horizontal_spacing">@dimen/half_internal_spacing</dimen>
+    <dimen name="s_horizontal_spacing">@dimen/monuple_internal_spacing</dimen>
+    <dimen name="m_horizontal_spacing">@dimen/couple_internal_spacing</dimen>
+    <dimen name="l_horizontal_spacing">@dimen/triple_internal_spacing</dimen>
+    <dimen name="xl_horizontal_spacing">@dimen/quadruple_internal_spacing</dimen>
+    <dimen name="xxl_horizontal_spacing">@dimen/quintuple_internal_spacing</dimen>
+    <dimen name="xxxl_horizontal_spacing">@dimen/sextuple_internal_spacing</dimen>
+    <dimen name="xl4_horizontal_spacing">@dimen/septuple_internal_spacing</dimen>
+    <dimen name="xl5_horizontal_spacing">@dimen/octuple_internal_spacing</dimen>
+    <dimen name="xl6_horizontal_spacing">@dimen/nonuple_internal_spacing</dimen>
+    <dimen name="xl7_horizontal_spacing">@dimen/decuple_internal_spacing</dimen>
+    <dimen name="xl8_horizontal_spacing">@dimen/undecuple_internal_spacing</dimen>
+    <dimen name="xl9_horizontal_spacing">@dimen/duodecuple_internal_spacing</dimen>
+    <dimen name="xl10_horizontal_spacing">@dimen/tredecuple_internal_spacing</dimen>
+    <dimen name="xl11_horizontal_spacing">@dimen/quattuordecuple_internal_spacing</dimen>
+    <dimen name="xl12_horizontal_spacing">@dimen/quindecuple_internal_spacing</dimen>
+    <dimen name="xl13_horizontal_spacing">@dimen/sexdecuple_internal_spacing</dimen>
+
+    <!--
+        Vertical Spacings:
+        Units of measurements to be used for marginTop, marginBottom, paddingTop, paddingBottom only.
+     -->
+    <dimen name="xxs_vertical_spacing">@dimen/quarter_internal_spacing</dimen>
+    <dimen name="xs_vertical_spacing">@dimen/half_internal_spacing</dimen>
+    <dimen name="s_vertical_spacing">@dimen/monuple_internal_spacing</dimen>
+    <dimen name="m_vertical_spacing">@dimen/couple_internal_spacing</dimen>
+    <dimen name="l_vertical_spacing">@dimen/triple_internal_spacing</dimen>
+    <dimen name="xl_vertical_spacing">@dimen/quadruple_internal_spacing</dimen>
+    <dimen name="xxl_vertical_spacing">@dimen/quintuple_internal_spacing</dimen>
+    <dimen name="xxxl_vertical_spacing">@dimen/sextuple_internal_spacing</dimen>
+    <dimen name="xl4_vertical_spacing">@dimen/septuple_internal_spacing</dimen>
+    <dimen name="xl5_vertical_spacing">@dimen/octuple_internal_spacing</dimen>
+    <dimen name="xl6_vertical_spacing">@dimen/nonuple_internal_spacing</dimen>
+    <dimen name="xl7_vertical_spacing">@dimen/decuple_internal_spacing</dimen>
+    <dimen name="xl8_vertical_spacing">@dimen/undecuple_internal_spacing</dimen>
+    <dimen name="xl9_vertical_spacing">@dimen/duodecuple_internal_spacing</dimen>
+    <dimen name="xl10_vertical_spacing">@dimen/tredecuple_internal_spacing</dimen>
+    <dimen name="xl11_vertical_spacing">@dimen/quattuordecuple_internal_spacing</dimen>
+    <dimen name="xl12_vertical_spacing">@dimen/quindecuple_internal_spacing</dimen>
+    <dimen name="xl13_vertical_spacing">@dimen/sexdecuple_internal_spacing</dimen>
+
+    <!--
+        Surrounding Spacings:
+        Units of measurements to be used for padding and margin attributes only.
+    -->
+    <dimen name="xxs_surrounding_spacing">@dimen/quarter_internal_spacing</dimen>
+    <dimen name="xs_surrounding_spacing">@dimen/half_internal_spacing</dimen>
+    <dimen name="s_surrounding_spacing">@dimen/monuple_internal_spacing</dimen>
+    <dimen name="m_surrounding_spacing">@dimen/couple_internal_spacing</dimen>
+    <dimen name="l_surrounding_spacing">@dimen/triple_internal_spacing</dimen>
+    <dimen name="xl_surrounding_spacing">@dimen/quadruple_internal_spacing</dimen>
+    <dimen name="xxl_surrounding_spacing">@dimen/quintuple_internal_spacing</dimen>
+    <dimen name="xxxl_surrounding_spacing">@dimen/sextuple_internal_spacing</dimen>
+    <dimen name="xl4_surrounding_spacing">@dimen/septuple_internal_spacing</dimen>
+    <dimen name="xl5_surrounding_spacing">@dimen/octuple_internal_spacing</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_7">7sp</dimen>
+    <dimen name="text_size_8">8sp</dimen>
+    <dimen name="text_size_9">9sp</dimen>
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="text_size_11">11sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_13">13sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_17">17sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="text_size_26">26sp</dimen>
+    <dimen name="text_size_28">28sp</dimen>
+    <dimen name="text_size_32">32sp</dimen>
+    <dimen name="text_size_36">36sp</dimen>
+    <dimen name="text_size_40">40sp</dimen>
+    <dimen name="text_size_48">48sp</dimen>
+    <dimen name="text_size_50">50sp</dimen>
+
+    <!-- Text line spacing values -->
+    <dimen name="line_spacing_1">1sp</dimen>
+    <dimen name="line_spacing_2">2sp</dimen>
+    <dimen name="line_spacing_3">3sp</dimen>
+    <dimen name="line_spacing_4">4sp</dimen>
+    <dimen name="line_spacing_5">5sp</dimen>
+    <dimen name="line_spacing_13">13sp</dimen>
+    <dimen name="line_spacing_16">16sp</dimen>
+
+    <!-- rounded button dimen-->
+    <dimen name="tap_refresh_round_edge">48dp</dimen>
+
+    <!--app bar elevation-->
+    <dimen name="app_bar_elevation">2dp</dimen>
+
+    <!-- Corner Radius values -->
+    <dimen name="xxs_corner_radius">2dp</dimen>
+    <dimen name="xs_corner_radius">4dp</dimen>
+    <dimen name="s_corner_radius">8dp</dimen>
+    <dimen name="m_corner_radius">16dp</dimen>
+    <dimen name="l_corner_radius">24dp</dimen>
+    <dimen name="xl_corner_radius">32dp</dimen>
+    <dimen name="xxxl_corner_radius">48dp</dimen>
+
+    <!-- Stroke Width values -->
+    <dimen name="xxs_stroke_width">1dp</dimen>
+    <dimen name="xs_stroke_width">2dp</dimen>
+    <dimen name="s_stroke_width">4dp</dimen>
+    <dimen name="m_stroke_width">8dp</dimen>
+    <dimen name="l_stroke_width">16dp</dimen>
+
+    <dimen name="rounded_close_button_min_height">42dp</dimen>
+
+    <dimen name="default_circle_indicator_radius">3dp</dimen>
+
+    <!-- refresh toolbar -->
+    <dimen name="collapse_toolbar_height">106dp</dimen>
+    <dimen name="collapsing_toolbar_increased_height">160dp</dimen>
+    <dimen name="collapsing_toolbar_increased_height_three_lines">220dp</dimen>
+
+    <!-- Dual Choice -->
+    <dimen name="create_appointment_guideline_height">32dp</dimen>
+    <item name="guide_percentage_25" format="float" type="dimen">0.25</item>
+    <item name="guide_percentage_75" format="float" type="dimen">0.75</item>
+    <dimen name="button_close_height">32dp</dimen>
+    <dimen name="button_close_width">64dp</dimen>
+
+
+    <!--Newly added-->
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="video_view_height">220dp</dimen>
+    <dimen name="compose_btn_min_width">180dp</dimen>
+    <dimen name="article_image_height">200dp</dimen>
+</resources>

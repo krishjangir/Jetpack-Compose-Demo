@@ -1,7 +1,14 @@
-package com.krishworld.jetpack_compose_demo.ui.screen
+package com.krishworld.jetpack_compose_demo.ui.screen.login
 
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
@@ -14,6 +21,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -22,23 +31,24 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.krishworld.jetpack_compose_demo.R
 import com.krishworld.jetpack_compose_demo.routes.Routes
 import com.krishworld.jetpack_compose_demo.ui.theme.Purple40
+import com.krishworld.jetpack_compose_demo.utils.dimensionTextResource
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginPage(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize()) {
         ClickableText(
-            text = AnnotatedString("Sign up here"),
+            text = AnnotatedString(stringResource(R.string.sign_up_here)),
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .padding(20.dp),
+                .padding(dimensionResource(R.dimen.m_surrounding_spacing)),
             onClick = { navController.navigate(Routes.SignUp.route) },
             style = TextStyle(
-                fontSize = 16.sp,
+                fontSize = dimensionTextResource(R.dimen.text_size_16),
                 fontFamily = FontFamily.Default,
                 textDecoration = TextDecoration.Underline,
                 color = Purple40
@@ -46,7 +56,7 @@ fun LoginPage(navController: NavHostController) {
         )
     }
     Column(
-        modifier = Modifier.padding(20.dp),
+        modifier = Modifier.padding(dimensionResource(R.dimen.m_surrounding_spacing)),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -54,19 +64,25 @@ fun LoginPage(navController: NavHostController) {
         val username = remember { mutableStateOf(TextFieldValue()) }
         val password = remember { mutableStateOf(TextFieldValue()) }
 
-        Text(text = "Login", style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Serif))
+        Text(
+            text = stringResource(R.string.login),
+            style = TextStyle(
+                fontSize = dimensionTextResource(R.dimen.text_size_36),
+                fontFamily = FontFamily.Serif
+            )
+        )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.m_vertical_spacing)))
         TextField(
-            label = { Text(text = "Username") },
+            label = { Text(text = stringResource(R.string.username)) },
             value = username.value,
             modifier = Modifier
                 .fillMaxWidth(),
             onValueChange = { username.value = it })
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.m_vertical_spacing)))
         TextField(
-            label = { Text(text = "Password") },
+            label = { Text(text = stringResource(R.string.password)) },
             value = password.value,
             modifier = Modifier
                 .fillMaxWidth(),
@@ -74,29 +90,36 @@ fun LoginPage(navController: NavHostController) {
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             onValueChange = { password.value = it })
 
-        Spacer(modifier = Modifier.height(20.dp))
-        Box(modifier = Modifier.padding(20.dp, 0.dp, 20.dp, 0.dp)) {
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.m_vertical_spacing)))
+        Box(
+            modifier = Modifier.padding(
+                dimensionResource(R.dimen.m_horizontal_spacing),
+                0.dp,
+                dimensionResource(R.dimen.m_horizontal_spacing),
+                0.dp
+            )
+        ) {
             Button(
                 onClick = {
                     navController.navigate(Routes.Dashboard.route) {
                         popUpTo(Routes.Dashboard.route)
                     }
                 },
-                shape = RoundedCornerShape(50.dp),
+                shape = RoundedCornerShape(dimensionResource(R.dimen.xxxl_surrounding_spacing)),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(50.dp)
+                    .height(dimensionResource(R.dimen.xxxl_vertical_spacing))
             ) {
-                Text(text = "Login")
+                Text(text = stringResource(R.string.login))
             }
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.m_vertical_spacing)))
         ClickableText(
-            text = AnnotatedString("Forgot password?"),
+            text = AnnotatedString(stringResource(R.string.forgot_password)),
             onClick = { navController.navigate(Routes.ForgotPassword.route) },
             style = TextStyle(
-                fontSize = 16.sp,
+                fontSize = dimensionTextResource(R.dimen.text_size_16),
                 fontFamily = FontFamily.Default
             )
         )

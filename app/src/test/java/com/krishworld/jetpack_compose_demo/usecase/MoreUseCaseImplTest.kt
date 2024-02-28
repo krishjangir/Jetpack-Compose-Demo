@@ -2,7 +2,8 @@ package com.krishworld.jetpack_compose_demo.usecase
 
 import androidx.paging.PagingData
 import com.krishworld.jetpack_compose_demo.data.model.Photo
-import com.krishworld.jetpack_compose_demo.data.remote.repository.MainRemoteRepository
+import com.krishworld.jetpack_compose_demo.data.remote.repository.MoreRemoteRepository
+import com.krishworld.jetpack_compose_demo.usecase.dashboard.more.MoreUseCaseImpl
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.RelaxedMockK
@@ -16,16 +17,16 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
-class MainUseCaseImplTest {
-    lateinit var underTest: MainUseCaseImpl
+class MoreUseCaseImplTest {
+    private lateinit var underTest: MoreUseCaseImpl
 
     @RelaxedMockK
-    lateinit var mainRemoteRepository: MainRemoteRepository
+    lateinit var mainRemoteRepository: MoreRemoteRepository
 
     @Before
     fun setup() {
         MockKAnnotations.init(this)
-        underTest = MainUseCaseImpl(
+        underTest = MoreUseCaseImpl(
             mainRemoteRepository = mainRemoteRepository
         )
     }

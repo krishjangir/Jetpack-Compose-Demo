@@ -1,5 +1,6 @@
 package com.krishworld.jetpack_compose_demo.components
 
+import android.annotation.SuppressLint
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.BottomAppBar
@@ -11,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun BottomAppBarView(selectedIndex: MutableState<Int>) {
@@ -79,3 +81,11 @@ fun BottomAppBarView(selectedIndex: MutableState<Int>) {
         }
     )
 }
+
+@SuppressLint("UnrememberedMutableState")
+@Preview
+@Composable
+private fun BottomAppBarViewPreview() {
+    BottomAppBarView(mutableStateOf(0))
+}
+

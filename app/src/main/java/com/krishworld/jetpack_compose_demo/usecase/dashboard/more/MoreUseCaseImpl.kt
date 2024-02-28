@@ -1,16 +1,16 @@
-package com.krishworld.jetpack_compose_demo.usecase
+package com.krishworld.jetpack_compose_demo.usecase.dashboard.more
 
 
 import androidx.paging.PagingData
 import com.krishworld.jetpack_compose_demo.data.model.Photo
-import com.krishworld.jetpack_compose_demo.data.remote.repository.MainRemoteRepository
+import com.krishworld.jetpack_compose_demo.data.remote.repository.MoreRemoteRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class MainUseCaseImpl @Inject constructor(
-    private val mainRemoteRepository: MainRemoteRepository
+class MoreUseCaseImpl @Inject constructor(
+    private val mainRemoteRepository: MoreRemoteRepository
 ) :
-    MainUseCase {
+    MoreUseCase {
     override fun getPhotoPagination(): Flow<PagingData<Photo>> {
         return mainRemoteRepository.getPhotoPagination()
     }

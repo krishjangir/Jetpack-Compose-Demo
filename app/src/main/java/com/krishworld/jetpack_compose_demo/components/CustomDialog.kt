@@ -1,5 +1,6 @@
 package com.krishworld.jetpack_compose_demo.components
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -10,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
@@ -18,6 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import com.krishworld.jetpack_compose_demo.R
@@ -111,4 +114,11 @@ fun CustomDialogUI(modifier: Modifier = Modifier, openDialogCustom: MutableState
             }
         }
     }
+}
+
+@SuppressLint("UnrememberedMutableState")
+@Preview
+@Composable
+private fun CustomDialogPreview() {
+    CustomDialog(mutableStateOf(true))
 }
