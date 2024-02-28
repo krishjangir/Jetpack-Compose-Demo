@@ -1,4 +1,4 @@
-package com.krishworld.jetpack_compose_demo.ui.screen
+package com.krishworld.jetpack_compose_demo.ui.screen.dashboard.animation
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
@@ -25,13 +25,13 @@ fun AnimationFragment(navController: NavHostController) {
 
 @Composable
 fun AnimationScreen(navController: NavHostController) {
-    var bikeState = rememberSaveable { mutableStateOf(ItemPosition.Start) }
-    var bikeState2 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
-    var bikeState3 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
-    var bikeState4 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
-    var bikeState5 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
-    var bikeState6 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
-    var bikeState7 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
+    val bikeState = rememberSaveable { mutableStateOf(ItemPosition.Start) }
+    val bikeState2 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
+    val bikeState3 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
+    val bikeState4 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
+    val bikeState5 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
+    val bikeState6 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
+    val bikeState7 = rememberSaveable { mutableStateOf(ItemPosition.Start) }
 
 
     val offsetAnimation: Dp by animateDpAsState(
@@ -108,7 +108,7 @@ fun BikeItem(itemPosition: MutableState<ItemPosition>, offsetAnimation: Dp) {
                 .fillMaxWidth()
                 .wrapContentSize(align = Alignment.Center)
         ) {
-            Text(text = "Start Anim bikeState7")
+            Text(text = "Start Anim bikeState")
         }
     }
 }

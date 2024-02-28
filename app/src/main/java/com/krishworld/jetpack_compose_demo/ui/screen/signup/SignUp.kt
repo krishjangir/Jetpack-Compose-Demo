@@ -1,4 +1,4 @@
-package com.krishworld.jetpack_compose_demo.ui.screen
+package com.krishworld.jetpack_compose_demo.ui.screen.signup
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,9 +12,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
+import com.krishworld.jetpack_compose_demo.R
 import com.krishworld.jetpack_compose_demo.components.CustomTopAppBar
+import com.krishworld.jetpack_compose_demo.utils.dimensionTextResource
 
 @Composable
 fun SignUp(navController: NavHostController) {
@@ -28,7 +30,7 @@ fun SignUp(navController: NavHostController) {
 fun ScaffoldWithTopBar(navController: NavHostController) {
     Scaffold(
         topBar = {
-            CustomTopAppBar(navController, "Signup", true)
+            CustomTopAppBar(navController, stringResource(R.string.sign_up), true)
         }, content = { innerPadding ->
             Column(
                 modifier = Modifier
@@ -38,8 +40,8 @@ fun ScaffoldWithTopBar(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Sign up",
-                    fontSize = 30.sp,
+                    text = stringResource(R.string.sign_up),
+                    fontSize = dimensionTextResource(R.dimen.text_size_28),
                     color = Color.Black
                 )
             }

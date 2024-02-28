@@ -15,8 +15,8 @@ import org.junit.Assert.assertThrows
 import org.junit.Before
 import org.junit.Test
 
-class MainRemoteRepositoryImplTest {
-    private lateinit var underTest: MainRemoteRepositoryImpl
+class MoreRemoteRepositoryImplTest {
+    private lateinit var underTest: MoreRemoteRepositoryImpl
 
     @RelaxedMockK
     lateinit var apiService: ApiService
@@ -31,7 +31,7 @@ class MainRemoteRepositoryImplTest {
     @Before
     fun setup() {
         MockKAnnotations.init(this)
-        underTest = MainRemoteRepositoryImpl(apiService = apiService, photoSource = photoSource)
+        underTest = MoreRemoteRepositoryImpl(apiService = apiService, photoSource = photoSource)
     }
 
     @After

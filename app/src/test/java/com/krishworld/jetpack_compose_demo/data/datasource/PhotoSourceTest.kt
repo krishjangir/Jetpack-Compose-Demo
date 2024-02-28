@@ -3,7 +3,6 @@ package com.krishworld.jetpack_compose_demo.data.datasource
 import androidx.paging.PagingSource
 import com.krishworld.jetpack_compose_demo.data.model.Photo
 import com.krishworld.jetpack_compose_demo.data.remote.ApiService
-import com.krishworld.jetpack_compose_demo.data.remote.repository.MainRemoteRepository
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.RelaxedMockK

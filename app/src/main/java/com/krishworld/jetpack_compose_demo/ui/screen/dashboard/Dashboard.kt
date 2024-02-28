@@ -1,4 +1,4 @@
-package com.krishworld.jetpack_compose_demo.ui.screen
+package com.krishworld.jetpack_compose_demo.ui.screen.dashboard
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -25,13 +25,22 @@ import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.media3.common.util.UnstableApi
 import androidx.navigation.NavHostController
 import com.google.accompanist.flowlayout.FlowMainAxisAlignment
 import com.google.accompanist.flowlayout.FlowRow
+import com.krishworld.jetpack_compose_demo.R
 import com.krishworld.jetpack_compose_demo.components.*
+import com.krishworld.jetpack_compose_demo.ui.screen.dashboard.animation.AnimationFragment
+import com.krishworld.jetpack_compose_demo.ui.screen.dashboard.home.HomeScreen
+import com.krishworld.jetpack_compose_demo.ui.screen.dashboard.more.MoreFragment
+import com.krishworld.jetpack_compose_demo.ui.screen.dashboard.profile.ProfileFragment
 import com.krishworld.jetpack_compose_demo.ui.theme.Purple40
+import com.krishworld.jetpack_compose_demo.viewmodel.dashboard.DashBoardViewModel
 import kotlinx.coroutines.launch
 
 @Composable
@@ -46,6 +55,7 @@ fun Dashboard(navController: NavHostController) {
 @UnstableApi
 @Composable
 fun DashboardPage(navController: NavHostController) {
+    val dashBoardViewModel: DashBoardViewModel = hiltViewModel()
     //For Drawer
     val drawerState: DrawerState =
         rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -54,7 +64,7 @@ fun DashboardPage(navController: NavHostController) {
     val selectedIndex = rememberSaveable { mutableStateOf(0) }
     val scaffoldState = remember { SnackbarHostState() }
 
-    val scope = rememberCoroutineScope()
+    val coroutineScope = rememberCoroutineScope()
     val showFab = remember { mutableStateOf(true) }
     val openDialogAlert = remember { mutableStateOf(false) }
     val openDialogCustom = remember { mutableStateOf(false) }
@@ -85,27 +95,26 @@ fun DashboardPage(navController: NavHostController) {
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
-            DrawerView(drawerState = drawerState, scope = scope)
+            DrawerView(drawerState = drawerState, scope = coroutineScope)
         }) {
-
         Scaffold(
             modifier = Modifier.nestedScroll(nestedScrollConnection),
             snackbarHost = { SnackbarHost(scaffoldState) },
             topBar = {
                 TopAppBar(
                     title = {
-                        Text(text = "Home")
+                        Text(text = stringResource(R.string.home))
                     },
                     navigationIcon = {
                         IconButton(onClick = {
                             //----------------------to show Drawer---------------
-                            scope.launch {
+                            coroutineScope.launch {
                                 drawerState.open()
                             }
                         }) {
                             Icon(
                                 imageVector = Icons.Filled.Menu,
-                                contentDescription = "Back"
+                                contentDescription = stringResource(R.string.back)
                             )
                         }
                     }
@@ -143,7 +152,10 @@ fun DashboardPage(navController: NavHostController) {
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
                                 Text(
-                                    text = "Under Development Tab ${selectedIndex.value + 1}",
+                                    text = stringResource(
+                                        R.string.under_development_tab,
+                                        selectedIndex.value + 1
+                                    ),
                                     modifier = Modifier.padding(20.dp)
                                 )
                             }
@@ -160,12 +172,18 @@ fun DashboardPage(navController: NavHostController) {
                 if (showFab.value)
                     FlowRow(
                         modifier = Modifier
-                            .padding(8.dp),
+                            .padding(dimensionResource(R.dimen.xs_surrounding_spacing)),
                         mainAxisAlignment = FlowMainAxisAlignment.Center,
                     ) {
                         ExtendedFloatingActionButton(
-                            modifier = Modifier.padding(start = 16.dp),
-                            content = { Text("Alert Dialog") },
+                            modifier = Modifier.padding(start = dimensionResource(R.dimen.s_horizontal_spacing)),
+                            content = {
+                                Text(
+                                    stringResource(
+                                        R.string.alert_dialog
+                                    )
+                                )
+                            },
                             containerColor = Purple40,
                             onClick = {
                                 //----------------------to show Dialog(Alert) ---------------
@@ -173,8 +191,14 @@ fun DashboardPage(navController: NavHostController) {
                             }
                         )
                         ExtendedFloatingActionButton(
-                            modifier = Modifier.padding(start = 16.dp),
-                            content = { Text("Dialog") },
+                            modifier = Modifier.padding(start = dimensionResource(R.dimen.s_horizontal_spacing)),
+                            content = {
+                                Text(
+                                    stringResource(
+                                        R.string.dialog
+                                    )
+                                )
+                            },
                             containerColor = Purple40,
                             onClick = {
                                 //----------------------to show Dialog(Custom) ---------------

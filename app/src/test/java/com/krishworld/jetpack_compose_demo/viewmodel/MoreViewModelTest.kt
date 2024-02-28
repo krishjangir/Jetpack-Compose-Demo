@@ -3,7 +3,8 @@ package com.krishworld.jetpack_compose_demo.viewmodel
 import androidx.paging.PagingData
 import com.krishworld.jetpack_compose_demo.data.model.Photo
 import com.krishworld.jetpack_compose_demo.testrules.CoroutineTestRule
-import com.krishworld.jetpack_compose_demo.usecase.MainUseCase
+import com.krishworld.jetpack_compose_demo.usecase.dashboard.more.MoreUseCase
+import com.krishworld.jetpack_compose_demo.viewmodel.dashboard.more.MoreViewModel
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.RelaxedMockK
@@ -18,11 +19,11 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class MainViewModelTest {
-    lateinit var underTest: MainViewModel
+class MoreViewModelTest {
+    private lateinit var underTest: MoreViewModel
 
     @RelaxedMockK
-    lateinit var mainUseCase: MainUseCase
+    lateinit var moreUseCase: MoreUseCase
 
     /** Required to making Coroutine in unit tests */
     @get:Rule
@@ -31,7 +32,7 @@ class MainViewModelTest {
     @Before
     fun setup() {
         MockKAnnotations.init(this)
-        underTest = MainViewModel(mainUseCase = mainUseCase)
+        underTest = MoreViewModel(moreUseCase = moreUseCase)
     }
 
     @After
@@ -49,14 +50,14 @@ class MainViewModelTest {
             )
         )
 
-        every { mainUseCase.getPhotoPagination() } returns flowOf(expectedData)
+        every { moreUseCase.getPhotoPagination() } returns flowOf(expectedData)
 
         // When
         runBlocking { underTest.getPhotoPagination().take(1).single() }
 
         // Then
         verify(
-            verifyBlock = { mainUseCase.getPhotoPagination() },
+            verifyBlock = { moreUseCase.getPhotoPagination() },
             exactly = 1
         )
     }

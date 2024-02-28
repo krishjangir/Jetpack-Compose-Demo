@@ -1,4 +1,4 @@
-package com.krishworld.jetpack_compose_demo.ui.screen
+package com.krishworld.jetpack_compose_demo.ui.screen.dashboard.profile
 
 
 import android.Manifest
@@ -14,27 +14,29 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.google.accompanist.glide.rememberGlidePainter
+import com.krishworld.jetpack_compose_demo.R
 import com.krishworld.jetpack_compose_demo.utils.ComposeFileProvider
+import com.krishworld.jetpack_compose_demo.utils.dimensionTextResource
 
 
 @Composable
 fun ProfileFragment(navController: NavHostController) {
 
     Column(
-        modifier = Modifier.padding(20.dp),
+        modifier = Modifier.padding(dimensionResource(R.dimen.m_vertical_spacing)),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Text(text = "Profile", style = TextStyle(fontSize = 40.sp, fontFamily = FontFamily.Serif))
+        Text(text = stringResource(id = R.string.profile), style = TextStyle(fontSize = dimensionTextResource(R.dimen.text_size_36), fontFamily = FontFamily.Serif))
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.m_vertical_spacing)))
 
         ImagePicker()
     }
@@ -138,7 +140,7 @@ fun ImagePicker(
         Column(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .padding(bottom = 32.dp),
+                .padding(bottom = dimensionResource(R.dimen.xl_vertical_spacing)),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Button(
@@ -167,11 +169,11 @@ fun ImagePicker(
                 },
             ) {
                 Text(
-                    text = "Select Image"
+                    text = stringResource(id = R.string.select_mage)
                 )
             }
             Button(
-                modifier = Modifier.padding(top = 16.dp),
+                modifier = Modifier.padding(top = dimensionResource(R.dimen.m_surrounding_spacing)),
                 onClick = {
                     /* when (PackageManager.PERMISSION_GRANTED) {
                          ContextCompat.checkSelfPermission(
@@ -200,7 +202,7 @@ fun ImagePicker(
                 },
             ) {
                 Text(
-                    text = "Take photo"
+                    text = stringResource(id = R.string.take_photo)
                 )
             }
         }

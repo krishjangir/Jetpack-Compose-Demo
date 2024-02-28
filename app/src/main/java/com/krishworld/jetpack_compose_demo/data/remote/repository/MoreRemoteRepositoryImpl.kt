@@ -9,11 +9,11 @@ import com.krishworld.jetpack_compose_demo.data.remote.ApiService
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class MainRemoteRepositoryImpl @Inject constructor(
+class MoreRemoteRepositoryImpl @Inject constructor(
     private val apiService: ApiService,
     private val photoSource: PhotoSource
 ) :
-    MainRemoteRepository {
+    MoreRemoteRepository {
     override suspend fun getPhotos(page: Int): List<Photo> {
         return apiService.getPhotos(page)
     }
